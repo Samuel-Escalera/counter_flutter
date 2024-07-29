@@ -41,3 +41,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# The app is development only for mobile
+/linux/
+/macos/
+/windows/
