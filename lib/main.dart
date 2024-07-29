@@ -1,4 +1,4 @@
-import 'package:counter_flutter/presentation/screens/counter/counter_screen.dart';
+import 'package:counter_flutter_mobile/presentation/screens/counter/counter_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
