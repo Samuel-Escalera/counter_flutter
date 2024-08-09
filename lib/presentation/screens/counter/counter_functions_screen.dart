@@ -1,3 +1,4 @@
+import 'package:counter_flutter_mobile/presentation/screens/counter/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class CounterFunctionsScreen extends StatefulWidget {
@@ -40,38 +41,37 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            shape: const StadiumBorder(),
-            onPressed: () {
-            clickCounter = 0;
-            setState(() {});
-            },
-            child: const Icon(Icons.refresh_rounded)
-          ),
-
+          CustomButton(
+            icon: Icons.refresh_rounded,
+            onPressed:() {
+              setState(() {
+                clickCounter = 0;
+              });
+            }
+          ) ,
           const SizedBox( height: 15),
 
-          FloatingActionButton(
-            shape: const StadiumBorder(),
-            onPressed: () {
-            clickCounter++;
-            setState(() {});
+          CustomButton(
+            icon: Icons.plus_one,
+            onPressed: (){
+              setState(() {
+                clickCounter ++;
+              });
             },
-            child: const Icon(Icons.plus_one)
-          ),
-
+          ) ,
           const SizedBox( height: 15),
 
-          FloatingActionButton(
-            shape: const StadiumBorder(),
+          CustomButton(
+            icon: Icons.exposure_minus_1,
             onPressed: () {
-            clickCounter--;
-            setState(() {});
+              setState(() {
+                if(clickCounter == 0) return;
+                clickCounter --;
+              });
             },
-            child: const Icon(Icons.exposure_minus_1)
-          )  
+            )  
         ]
         )
     );
   }
-} 
+}
